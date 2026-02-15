@@ -16,7 +16,7 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center everything */
+  align-items: center;
   text-align: center;
 }
 
@@ -25,18 +25,20 @@ h1 {
   font-size: 2em;
 }
 
-/* Container for the accordion */
+/* Container */
 .gallery-container {
-  max-width: 1000px; /* limit total width */
+  max-width: 1000px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Accordion gallery */
 .gallery {
   display: flex;
-  justify-content: center; /* center panels inside container */
+  justify-content: center;
   gap: 10px;
-  height: 380px; /* fixed height for Google Sites */
+  height: 380px;
   overflow: hidden;
 }
 
@@ -49,16 +51,23 @@ h1 {
   position: relative;
 }
 
+.panel a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Hover effect - only the hovered panel expands */
+/* Hover effect - only hovered panel expands */
 @media (hover: hover) {
   .panel:hover {
-    flex: 5; /* expand hovered panel */
+    flex: 6; /* slightly larger so it clearly grows */
   }
 }
 
@@ -85,23 +94,33 @@ h1 {
   <div class="gallery">
 
     <div class="panel">
-      <img src="TheGrind01.png" alt="The Grind 01">
+      <a href="TheGrind01.png" target="_blank">
+        <img src="TheGrind01.png" alt="The Grind 01">
+      </a>
     </div>
 
     <div class="panel">
-      <img src="TheGrind02.png" alt="The Grind 02">
+      <a href="TheGrind02.png" target="_blank">
+        <img src="TheGrind02.png" alt="The Grind 02">
+      </a>
     </div>
 
     <div class="panel">
-      <img src="TheGrind03.png" alt="The Grind 03">
+      <a href="TheGrind03.png" target="_blank">
+        <img src="TheGrind03.png" alt="The Grind 03">
+      </a>
     </div>
 
     <div class="panel">
-      <img src="TheGrind04.png" alt="The Grind 04">
+      <a href="TheGrind04.png" target="_blank">
+        <img src="TheGrind04.png" alt="The Grind 04">
+      </a>
     </div>
 
     <div class="panel">
-      <img src="TheGrind05.png" alt="The Grind 05">
+      <a href="TheGrind05.png" target="_blank">
+        <img src="TheGrind05.png" alt="The Grind 05">
+      </a>
     </div>
 
   </div>
