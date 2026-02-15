@@ -17,74 +17,32 @@ body {
 .gallery {
   display: flex;
   width: 100%;
-  height: 380px; /* Optimized for Google Sites */
+  height: 380px; /* Google Sites optimized */
   overflow: hidden;
 }
 
-/* Default collapsed width */
+/* Panels */
 .panel {
-  flex: 0 0 220px; /* smaller starting width */
-  position: relative;
+  flex: 0 0 220px; /* starting width */
   overflow: hidden;
-  transition: flex 0.6s ease;
+  transition: flex 0.5s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
 }
 
-/* Dark overlay */
-.panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  transition: background 0.4s ease;
-}
-
-/* Preview button */
-.preview-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px 18px;
-  background: white;
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 4px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  z-index: 2;
-}
-
-/* Desktop hover */
+/* Hover / accordion effect */
 @media (hover: hover) {
   .gallery:hover .panel {
-    flex: 1;
+    flex: 1; /* shrink all panels initially */
   }
-
   .panel:hover {
-    flex: 4;
-  }
-
-  .panel:hover img {
-    transform: scale(1.05);
-  }
-
-  .panel:hover::after {
-    background: rgba(0,0,0,0.15);
-  }
-
-  .panel:hover .preview-btn {
-    opacity: 1;
-    transform: translateY(0);
+    flex: 5; /* expand hovered panel fully */
   }
 }
 
@@ -94,15 +52,10 @@ body {
     flex-direction: column;
     height: auto;
   }
-
   .panel {
     width: 100%;
     height: 220px;
-  }
-
-  .preview-btn {
-    opacity: 1;
-    transform: none;
+    flex: unset;
   }
 }
 </style>
@@ -114,27 +67,22 @@ body {
 
   <div class="panel">
     <img src="TheGrind01.png">
-    <a href="https://your-preview-link-1.com" class="preview-btn" target="_blank">Preview</a>
   </div>
 
   <div class="panel">
     <img src="TheGrind02.png">
-    <a href="https://your-preview-link-2.com" class="preview-btn" target="_blank">Preview</a>
   </div>
 
   <div class="panel">
     <img src="TheGrind03.png">
-    <a href="https://your-preview-link-3.com" class="preview-btn" target="_blank">Preview</a>
   </div>
 
   <div class="panel">
     <img src="TheGrind04.png">
-    <a href="https://your-preview-link-4.com" class="preview-btn" target="_blank">Preview</a>
   </div>
 
   <div class="panel">
     <img src="TheGrind05.png">
-    <a href="https://your-preview-link-5.com" class="preview-btn" target="_blank">Preview</a>
   </div>
 
 </div>
