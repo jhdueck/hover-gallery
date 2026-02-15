@@ -17,7 +17,7 @@ body {
 .gallery {
   display: flex;
   width: 100%;
-  height: 300px; /* Google Sites optimized */
+  height: 380px; /* Google Sites optimized */
   overflow: hidden;
 }
 
@@ -36,13 +36,10 @@ body {
   object-fit: cover;
 }
 
-/* Hover / accordion effect */
+/* Only the hovered panel expands */
 @media (hover: hover) {
-  .gallery:hover .panel {
-    flex: 1; /* shrink all panels initially */
-  }
   .panel:hover {
-    flex: 5; /* expand hovered panel fully */
+    flex: 5; /* expand hovered panel */
   }
 }
 
