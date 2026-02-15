@@ -25,7 +25,7 @@ h1 {
   font-size: 2em;
 }
 
-/* Container */
+/* Container for centering the gallery */
 .gallery-container {
   max-width: 1000px;
   width: 100%;
@@ -44,7 +44,8 @@ h1 {
 
 /* Panels */
 .panel {
-  flex: 0 0 220px; /* collapsed width */
+  flex: 1;            /* start at equal size */
+  min-width: 220px;   /* prevent shrinking too much */
   overflow: hidden;
   transition: flex 0.5s ease;
   cursor: pointer;
@@ -64,10 +65,13 @@ h1 {
   display: block;
 }
 
-/* Hover effect - only hovered panel expands */
+/* Hover effect - expand hovered panel, shrink others slightly */
 @media (hover: hover) {
+  .gallery:hover .panel {
+    flex: 1; /* shrink all panels */
+  }
   .panel:hover {
-    flex: 6; /* slightly larger so it clearly grows */
+    flex: 5; /* expand only hovered panel */
   }
 }
 
